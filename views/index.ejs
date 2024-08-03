@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>To-do List</title>
+</head>
+
+<body>
+    <div class="container">
+        <form action="/notes" method="POST">
+        <div class="inputBox">
+                <div class="inputTitle">
+                    <label for="inputTitle">Title:</label>
+                    <input type="text" id="inputTitle" name="title" required>
+                </div>
+                <div class="inputDescription">
+                    <label for="inputDescription">Description:</label>
+                    <input type="text" id="inputDescription" name="description">
+                </div>
+            </div>
+            <button type="submit" class="add"><i class="fas fa-plus"></i> Add</button>
+        </form>
+        
+        <div>
+            <% for(let note of notes) { %>
+                <div class="notes-container">
+                    <h1>
+                        <span><%= note.title %></span>
+                        <i class="fa fa-chevron-down arrow"></i>
+                    </h1>
+
+                    <p class="hidden"><%= note.description %></p>
+                    
+                    <div class="edit-form hidden">
+                        <form action="/notes/<%= note._id %>/?_method=PUT" method="POST">
+                            <input type="text" name="title" value="<%= note.title %>" required>
+                            <input type="text" name="description" value="<%= note.description %>">
+                            <button type="submit" class="save">Save</button>
+                            <button type="button" class="cancel">Cancel</button>
+                        </form>
+                    </div>
+
+                    
+                    
+    
+                    <div class="button-tick-div">
+                        <button class="edit"><i class="fas fa-edit"></i> Edit</button>
+                        <form action="/notes/<%= note._id %>/?_method=DELETE" method="post" style="display: inline">
+                            <button type="submit" class="delete"><i class="fas fa-trash"></i> Delete</button>
+                        </form>
+                    </div>
+                    
+    
+                </div>
+            <% } %>
+        </div>
+        
+
+    <script src="/script.js"></script>
+</body>
+
+</html>

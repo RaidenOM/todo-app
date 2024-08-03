@@ -1,0 +1,136 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #dbdbdb;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    width: 600px;
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.notes-container {
+    margin-top: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.notes-container p {
+    width: 100%;
+    white-space: normal; /* Enable word wrap */
+    word-wrap: break-word; /* Ensure long words break to the next line */
+}
+
+.inputTitle {
+    margin-bottom: 10px;
+}
+
+.inputDescription {
+    margin-bottom: 10px;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.completed-checkbox {
+    color: green;
+}
+
+.add {
+    cursor: pointer;
+}
+
+.button-tick-div {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.notes-container h1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.edit {
+    cursor: pointer;
+    margin-right: 10px;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.delete {
+    cursor: pointer;
+    margin-right: 10px;
+    background-color: red; /* Green */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.add {
+    cursor: pointer;
+    margin-right: 10px;
+    background-color: rgb(86, 86, 255);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.inputBox {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 15px;
+}
+
+input[type="checkbox"] {
+    transform: scale(1.2);
+}
+
+.edit:hover {
+    background-color: #45a049; /* Slightly darker green */
+}
+
+.delete:hover {
+    background-color: #c82333; /* Slightly darker red */
+}
+
+.add:hover {
+    background-color: #3a3ac5; /* Slightly darker blue */
+}
+
+.arrow {
+    margin-left: 10px;
+    transition: transform 0.2s;
+    cursor: pointer;
+}
